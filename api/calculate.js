@@ -120,7 +120,7 @@ async function run(url_to_scan) {
  *
  * @return product list | empty.
  */
-export default function calculate(req, res) {
+export default async function calculate(req, res) {
   let url_to_scan = req.query.url;
   try {
     let result = await run(url_to_scan);
