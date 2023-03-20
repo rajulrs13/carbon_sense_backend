@@ -1,6 +1,3 @@
-const express = require("express");
-const router = express.Router();
-
 // Event types to catch
 const events = [
   "Page.loadEventFired",
@@ -123,17 +120,15 @@ async function run(url_to_scan) {
  *
  * @return product list | empty.
  */
-router.get("/", async (req, res) => {
-  console.log("calculate");
+export default function calculate(req, res) {
   let url_to_scan = req.query.url;
   try {
-    // let result = await run(url_to_scan);
-//     res.end(JSON.stringify(result));
-    res.end("hello");
+    let result = await run(url_to_scan);
+    res.end(JSON.stringify(result));
   } catch (error) {
     console.error(error);
     return res.status(500).send("Server error");
   }
-});
+};
 
-module.exports = router;
+
