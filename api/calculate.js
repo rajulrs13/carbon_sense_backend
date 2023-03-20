@@ -124,6 +124,7 @@ async function run(url_to_scan) {
  * @return product list | empty.
  */
 router.get("/", async (req, res) => {
+  console.log("calculate");
   let url_to_scan = req.query.url;
   try {
     // let result = await run(url_to_scan);
