@@ -126,8 +126,9 @@ async function run(url_to_scan) {
 router.get("/", async (req, res) => {
   let url_to_scan = req.query.url;
   try {
-    let result = await run(url_to_scan);
-    res.end(JSON.stringify(result));
+    // let result = await run(url_to_scan);
+//     res.end(JSON.stringify(result));
+    res.end("hello");
   } catch (error) {
     console.error(error);
     return res.status(500).send("Server error");
