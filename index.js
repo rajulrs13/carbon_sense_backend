@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const calculate = require("./calculate2");
+const calculate = require("./api/calculate");
 
 app.use(express.json({ extended: false }));
 
